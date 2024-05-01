@@ -72,13 +72,34 @@ span {
           transform: translate(100%, -50%);
 }
 
-/*header section*/
+.hero_area {
+  height: 100vh;
+  display: block;
+  position: relative; /* Add position relative to contain absolutely positioned content */
+}
+
+.hero_area::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url(../images/hero-bg.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; /* Make the background image fixed */
+  z-index: -1; /* Send the background image behind other content */
+}
+
+/*
+
 .hero_area {
   height: 100vh;
   background-color: #b5caee;
   background-image: url(../images/hero-bg.jpg);
   background-size: cover;
-}
+}*/
 
 .sub_page .hero_area {
   height: auto;
@@ -272,6 +293,10 @@ a:focus {
   z-index: 5;
   margin: 35px 25px 0 25px;
   flex: 1;
+}
+
+.do_section .detail-box h5{
+  font-weight: bold;
 }
 
 .do_section .do_container .box .img-box {
